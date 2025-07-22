@@ -1,5 +1,5 @@
 <template>
-  <div class="interview-guide-container">
+  <div class="interview-guide-container" ref="guideContainer">
     <div class="markdown-body" v-html="html"></div>
     <transition name="fade">
       <div v-if="showReadTip" class="read-tip">
@@ -50,7 +50,7 @@ export default {
     showChallengeForm(val) {
       if (val) {
         this.showReadTip = false;
-      }e
+      }
     }
   },
   methods: {
@@ -66,6 +66,7 @@ export default {
     thinkMore() {
       this.showChallengeForm = false;
       this.showReadTip = true;
+      this.$refs.guideContainer.scrollTop = 0;
     },
     handleScroll() {
       // 防抖
