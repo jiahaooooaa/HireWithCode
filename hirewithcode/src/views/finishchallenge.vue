@@ -20,6 +20,8 @@ export default {
   methods: {
     submitFinish() {
       alert("感谢您的参与，我们会在24小时内联系您");
+
+      
       // 可扩展为后端提交
     }
   }
